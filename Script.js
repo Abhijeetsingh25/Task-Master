@@ -11,7 +11,7 @@ function addTask(){
         listContainer.appendChild(li);
 
         let span = document.createElement("span")
-        span.innerHTML = "\u00d7"  // cros icon ke lie ki jo item add ho list me uske sath cross icon rhe 
+        span.innerHTML = "\u00d7"   
         li.appendChild(span)
 
       }
@@ -20,8 +20,8 @@ function addTask(){
 }
 
 listContainer.addEventListener("click" , function(e) {
-   if(e.target.tagName=== "LI"){  // tagname agr li h to
-    e.target.classList.toggle("checked"); // toggle kr denge
+   if(e.target.tagName=== "LI"){ 
+    e.target.classList.toggle("checked");
     savaData()   
 }
    else if(e.target.tagName === "SPAN"){
@@ -31,11 +31,11 @@ listContainer.addEventListener("click" , function(e) {
 } , false)
 
 function savaData(){  
-    localStorage.setItem("data" , listContainer.innerHTML); // set krege data ko listcontainer ke andr 
+    localStorage.setItem("data" , listContainer.innerHTML);
 }
 
-function snowTask(){  // hm jis v item ko list kre wo page refres hone ke bad v rha aaye  localStorage me
-    listContainer.innerHTML = localStorage.getItem("data");   // get krege data ko
+function snowTask(){  
+    listContainer.innerHTML = localStorage.getItem("data");
 }
 
 snowTask();
